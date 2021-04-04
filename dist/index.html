@@ -14,27 +14,70 @@
   <title>Weather App</title>
 </head>
 <body>
-    <nav class="navbar is-primary navbar-fixed-top" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand ml-5">
-        
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="./assets/img/weather.png" alt="weather">
-          <h1 class="title ml-2 is-size-5 has-text-white">EasyWeather</h1>
+  <nav class="navbar is-primary navbar-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand ml-5">
+      
+      <a class="navbar-item" href="https://bulma.io">
+        <img src="./assets/img/weather.png" alt="weather">
+        <h1 class="title ml-2 is-size-5 has-text-white">EasyWeather</h1>
+      </a>
+    </div>
+  </nav>
+  <div class="container is-max-desktop mt-5 pb-">
+    <div class="field has-addons">
+      <p class="control is-expanded">
+        <input class="input is-normal is-primary" type="text" placeholder="Enter a city to search">
+      </p>
+      <p class="control">
+        <a class="button is-primary">
+          Search
         </a>
-      </div>
-    </nav>
-    <div class="container is-max-desktop mt-6">
-      <div class="field has-addons">
-        <p class="control is-expanded">
-          <input class="input is-normal is-primary" type="text" placeholder="Enter a city to search">
-        </p>
-        <p class="control">
-          <a class="button is-primary">
-            Search
-          </a>
-        </p>
+      </p>
+    </div>
+  </div>
+  <section class="container hero is-max-desktop">
+    <div class="hero-body mx-6">
+      <div class="card mx-6">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="https://media.giphy.com/media/kBfL5cuu4bj4rr6GN8/giphy.gif" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content has-text-centered">
+          <div class="columns is-mobile is-gapless">
+            <div class="left column">
+              <p class="title">
+                32°
+              </p>
+              <p class="subtitle">
+                Xalapa, MX
+              </p>
+            </div>
+            <div class="right column">
+              <p><img src="./assets/img/rainy-season.png" alt="Placeholder"></img></p>
+            </div>
+            
+          </div>
+        </div>
+        <footer class="card-footer is-mobile">
+          <p class="card-footer-item">
+            <button class="button is-primary is-outlined is-small" type="button">Celcius</button>
+          </p>
+          <p class="card-footer-item">
+            <button class="button is-primary is-outlined is-small" type="button">Fahrenheit</button>
+          </p>
+        </footer>
       </div>
     </div>
+  </section>
+  
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>EasyWeather</strong> by <a href="https://miguelricano.me">Miguel Ricaño</a>.
+    </p>
+  </div>
+</footer>
   <script src="main.js"></script>
 </body>
 </html>
