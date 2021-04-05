@@ -1,13 +1,9 @@
-export class GoeLocation {
+export default class GeoLocation {
   static getCityNameFromLatLon({ latitude, longitude }) {
     const url = `https://geocode.xyz/${latitude},${longitude}?json=1`;
     return fetch(url)
-      .then((rowGeoData) => {
-        return rowGeoData.json();
-      })
-      .then((parsedGeoData) => {
-        return parsedGeoData;
-      });
+      .then((rowGeoData) => rowGeoData.json())
+      .then((parsedGeoData) => parsedGeoData);
   }
 
   static getLatLonFromCityName(cityName) {

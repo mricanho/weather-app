@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_OW_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/OW_api */ \"./src/modules/OW_api.js\");\n\r\n\r\nconst vancouverCoordinates = {\r\n  latitude: 49.24847,\r\n  longitude: -123.10299,\r\n};\r\n\r\nfunction hello() {\r\n  console.log('hello');\r\n}\r\n\r\nlet weatherNow = _modules_OW_api__WEBPACK_IMPORTED_MODULE_0__.Weather.getWeatherData(vancouverCoordinates)\r\nfunction printWeather() {\r\n  console.log({weatherNow});\r\n}\r\nhello();\r\nprintWeather();\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_OW_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/OW_api */ \"./src/modules/OW_api.js\");\n\n\nconst vancouverCoordinates = {\n  latitude: 49.24847,\n  longitude: -123.10299,\n};\n\nfunction hello() {\n  console.log('hello');\n}\n\nconst weatherNow = _modules_OW_api__WEBPACK_IMPORTED_MODULE_0__.default.getWeatherData(vancouverCoordinates);\nfunction printWeather() {\n  console.log({ weatherNow });\n}\nhello();\nprintWeather();\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Weather\": () => (/* binding */ Weather)\n/* harmony export */ });\nconst _WeatherAPIKey = '353ef5d85952112199e4f55400bcd4c2';\r\n\r\nclass Weather {\r\n  static async getWeatherData({ latitude, longitude }) {\r\n    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,alerts&appid=${_WeatherAPIKey}`;\r\n    const rowWeatherData = await fetch(url);\r\n    const parsedWeatherData = await rowWeatherData.json();\r\n    return parsedWeatherData;\r\n  }\r\n}\n\n//# sourceURL=webpack://weather-app/./src/modules/OW_api.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Weather)\n/* harmony export */ });\nconst weatherAPIKey = '353ef5d85952112199e4f55400bcd4c2';\n\nclass Weather {\n  static async getWeatherData({ latitude, longitude }) {\n    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,alerts&appid=${weatherAPIKey}`;\n    const rowWeatherData = await fetch(url);\n    const parsedWeatherData = await rowWeatherData.json();\n    return parsedWeatherData;\n  }\n}\n\n//# sourceURL=webpack://weather-app/./src/modules/OW_api.js?");
 
 /***/ })
 

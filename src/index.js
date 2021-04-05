@@ -1,4 +1,4 @@
-import { Weather } from './modules/OW_api'
+import Weather from './modules/OW_api';
 
 const vancouverCoordinates = {
   latitude: 49.24847,
@@ -9,9 +9,9 @@ function hello() {
   console.log('hello');
 }
 
-let weatherNow = Weather.getWeatherData(vancouverCoordinates)
+const weatherNow = Weather.getWeatherData(vancouverCoordinates);
 function printWeather() {
-  console.log({weatherNow});
+  console.log({ weatherNow });
 }
 hello();
 printWeather();
