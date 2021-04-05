@@ -23,7 +23,7 @@
       </a>
     </div>
   </nav>
-  <div class="container is-max-desktop mt-5 pb-">
+  <div class="container is-max-desktop mt-5 px-6">
     <div class="field has-addons needs-validation">
       <p class="control is-expanded">
         <input class="input is-normal is-primary" type="text" placeholder="Enter a city to search" id="locationInpt">
@@ -44,28 +44,46 @@
       </div>
     </div>
   </section>
-  <section class="container hero is-max-desktop mainSection">
+  <section class="container hero is-max-desktop mainSection px-6">
     <div class="hero-body mx-6">
       <div class="card mx-6">
+        <header class="is-justify-content-space-between">
+          <span class="p-1 ml-2 has-text-weight-semibold" id="day">
+            Monday
+          </span>
+          <span class="p-1 mr-2 has-text-primary" id="date">
+              4 Apr
+          </span>
+        </header>
         <div class="card-image mx-6">
           <figure class="image is-5by4">
-            <img src="https://media.giphy.com/media/kBfL5cuu4bj4rr6GN8/giphy.gif" alt="Placeholder image">
+            <img src="https://media.giphy.com/media/kBfL5cuu4bj4rr6GN8/giphy.gif" alt="Placeholder image" id="temp-icon">
           </figure>
         </div>
         <div class="card-content has-text-centered">
-          <div class="columns is-mobile is-gapless">
+          <div class="columns is-mobile is-gapless ">
             <div class="left column">
-              <p class="title is-size-1">
+              <p class="title temp" id="temp">
                 19°
               </p>
-              <p class="subtitle is-size-3">
+              <p class="subtitle is-size-3" id="city">
                 Xalapa, MX
               </p>
             </div>
-            <div class="right column">
-              <p><img src="./assets/img/rainy-season.png" alt="Placeholder"></img></p>
-            </div>
-            
+            <div class="right column mt-1">
+              <div class="p-1 mt-1">
+                <img src="assets/img/humidity.png" alt="Placeholder image" width="19" height="19" class="pt-1 mr-1">
+                <span class="" id="humidity">38%</span>
+              </div>
+              <div class="p-1 mt-1">
+                <img src="assets/img/wind.png" alt="Placeholder image" width="19" height="18" class="pt-1">
+                <span class="" id="windspeed">5.54 km/h</span>
+              </div>
+              <div class="p-1 mt-1">
+                <img src="assets/img/compass.png" alt="Placeholder image" width="19" height="18" class="pt-1">
+                <span class="" id="windDirection">N</span>
+              </div>
+            </div>           
           </div>
         </div>
         <footer class="card-footer is-mobile">
@@ -73,13 +91,12 @@
             <label class="button is-primary is-inverted is-small is-hovered" type="button" id="celsius">Celcius</button>
           </p>
           <p class="card-footer-item">
-            <label class="button is-primary is-outlined is-small" type="button" id="fahrenheit">Fahrenheit</button>
+            <label class="button is-primary is-inverted is-small" type="button" id="fahrenheit">Fahrenheit</button>
           </p>
         </footer>
       </div>
     </div>
   </section>
-  
 <footer class="footer">
   <div class="content has-text-centered">
     <p>
