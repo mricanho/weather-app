@@ -24,32 +24,41 @@
     </div>
   </nav>
   <div class="container is-max-desktop mt-5 pb-">
-    <div class="field has-addons">
+    <div class="field has-addons needs-validation">
       <p class="control is-expanded">
-        <input class="input is-normal is-primary" type="text" placeholder="Enter a city to search">
+        <input class="input is-normal is-primary" type="text" placeholder="Enter a city to search" id="locationInpt">
       </p>
       <p class="control">
-        <a class="button is-primary">
+        <a class="button is-primary" id="findBtn">
           Search
         </a>
       </p>
     </div>
   </div>
-  <section class="container hero is-max-desktop">
+  <section class="container hero is-max-desktop is-hidden" id="displayWhileLoadingPage">
     <div class="hero-body mx-6">
       <div class="card mx-6">
-        <div class="card-image px-6">
-          <figure class="image is-4by3">
+        <div class="card-image px-6 has-text-centered" >
+          <img src="https://media.giphy.com/media/Jku35TGjTmC0YAWsbb/giphy.gif" alt="Placeholder image">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container hero is-max-desktop mainSection">
+    <div class="hero-body mx-6">
+      <div class="card mx-6">
+        <div class="card-image mx-6">
+          <figure class="image is-5by4">
             <img src="https://media.giphy.com/media/kBfL5cuu4bj4rr6GN8/giphy.gif" alt="Placeholder image">
           </figure>
         </div>
         <div class="card-content has-text-centered">
           <div class="columns is-mobile is-gapless">
             <div class="left column">
-              <p class="title">
+              <p class="title is-size-1">
                 19°
               </p>
-              <p class="subtitle">
+              <p class="subtitle is-size-3">
                 Xalapa, MX
               </p>
             </div>
@@ -61,10 +70,10 @@
         </div>
         <footer class="card-footer is-mobile">
           <p class="card-footer-item">
-            <button class="button is-primary is-outlined is-small" type="button">Celcius</button>
+            <label class="button is-primary is-inverted is-small is-hovered" type="button" id="celsius">Celcius</button>
           </p>
           <p class="card-footer-item">
-            <button class="button is-primary is-outlined is-small" type="button">Fahrenheit</button>
+            <label class="button is-primary is-outlined is-small" type="button" id="fahrenheit">Fahrenheit</button>
           </p>
         </footer>
       </div>
