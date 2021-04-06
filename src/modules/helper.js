@@ -4,9 +4,9 @@ export function degToCompass(angle) {
   return directions[Math.round(angle / 45) % 8];
 }
 
-export function timeConverter(UNIX_timestamp) {
-  let dateVal = new Date(UNIX_timestamp * 1000);
-  let months = [
+export function timeConverter(timeStamp) {
+  const dateVal = new Date(timeStamp * 1000);
+  const months = [
     'Jan',
     'Feb',
     'Mar',
@@ -21,9 +21,9 @@ export function timeConverter(UNIX_timestamp) {
     'Dec',
   ];
 
-  let month = months[dateVal.getMonth()];
-  let date = dateVal.getDate();
-  let day = [
+  const month = months[dateVal.getMonth()];
+  const date = dateVal.getDate();
+  const day = [
     'Sunday',
     'Monday',
     'Tuesday',
@@ -32,13 +32,13 @@ export function timeConverter(UNIX_timestamp) {
     'Friday',
     'Saturday',
   ][dateVal.getDay()];
-  let time = { day: day, date: `${date} ${month}` };
+  const time = { day, date: `${date} ${month}` };
   return time;
 }
 
 // set multiple attributes of a dom element
 export function setAttributes(el, attrs) {
-  for (let key in attrs) {
+  for (const key in attrs) {
     el.setAttribute(key, attrs[key]);
   }
 }
@@ -52,8 +52,8 @@ export function truncateTemp(temp) {
   const tempNoDecimal = Math.trunc(temp);
 
   return tempNoDecimal <= 9 && tempNoDecimal >= -9
-    ? tempNoDecimal + '°' + tempUnit
-    : tempNoDecimal + '°';
+    ? `${tempNoDecimal}°${tempUnit}`
+    : `${tempNoDecimal}°`;
 }
 
 // convert wind speed
@@ -62,14 +62,12 @@ export function convertSpeed(speed) {
 
   // if temperatureUnit does not exist default to metric
   if (tempUnit) {
-    if (tempUnit == 'C') {
-      return (speed * 3.6).toFixed(2) + ' km/h';
-    } else {
-      return (speed * 2.237).toFixed(2) + ' mph';
+    if (tempUnit === 'C') {
+      return `${(speed * 3.6).toFixed(2)} km/h`;
     }
-  } else {
-    return (speed * 3.6).toFixed(2) + ' km/h';
+    return `${(speed * 2.237).toFixed(2)} mph`;
   }
+  return `${(speed * 3.6).toFixed(2)} km/h`;
 }
 
 
@@ -77,12 +75,10 @@ export function convertTemp(temp) {
   const tempUnit = localStorage.getItem('temperatureUnit');
 
   if (tempUnit) {
-    if (tempUnit == 'C') {
+    if (tempUnit === 'C') {
       return temp - 273.15;
-    } else {
-      return ((temp - 273.15) * 9) / 5 + 32;
     }
-  } else {
-    return temp - 273.15;
+    return ((temp - 273.15) * 9) / 5 + 32;
   }
+  return temp - 273.15;
 }
