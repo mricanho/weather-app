@@ -12,9 +12,9 @@ export default class View {
       convertedCurrentTemp,
     );
 
-    selectors.todayConditionIcon.src = require(`../img/icons/${
+/*     selectors.todayConditionIcon.src = require(`../img/icons/${
       weatherDate.current.weather[0].icon.substring(0, 2)
-    }.svg`);
+    }.svg`); */
 
     selectors.todayCondition.textContent = weatherDate.current.weather[0].description;
 
@@ -43,9 +43,9 @@ export default class View {
 
       selectors[`day_${index}_date`].textContent = date.day;
 
-      selectors[`day_${index}_icon`].src = require(`../img/icons/${
+  /*     selectors[`day_${index}_icon`].src = require(`../img/icons/${
         day.weather[0].icon.substring(0, 2)
-      }.svg`);
+      }.svg`); */
 
       const truncatedMaxTemp = Math.trunc(
         helper.convertTemp(day.temp.max),

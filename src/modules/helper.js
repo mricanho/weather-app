@@ -5,8 +5,8 @@ export function degToCompass(angle) {
 }
 
 export function timeConverter(timeStamp) {
-  const dateVal = new Date(timeStamp * 1000);
-  const months = [
+  let dateVal = new Date(timeStamp * 1000);
+  let months = [
     'Jan',
     'Feb',
     'Mar',
@@ -21,9 +21,9 @@ export function timeConverter(timeStamp) {
     'Dec',
   ];
 
-  const month = months[dateVal.getMonth()];
-  const date = dateVal.getDate();
-  const day = [
+  let month = months[dateVal.getMonth()];
+  let date = dateVal.getDate();
+  let day = [
     'Sunday',
     'Monday',
     'Tuesday',
@@ -32,7 +32,7 @@ export function timeConverter(timeStamp) {
     'Friday',
     'Saturday',
   ][dateVal.getDay()];
-  const time = { day, date: `${date} ${month}` };
+  let time = { day, date: `${date} ${month}` };
   return time;
 }
 

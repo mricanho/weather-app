@@ -1,8 +1,8 @@
-import Weather from './modules/OW_api';
-import View from './modules/view';
-import * as selectors from './modules/selectors';
-import GeoLocation from './modules/geocode_api';
-import * as helper from './modules/helper';
+/* import { Weather } from './OW_api';
+import { View } from './view';
+import * as selectors from './selectors';
+import { GeoLocation } from './geocode_api';
+import * as helper from './helper';
 import swal from 'sweetalert';
 
 const weatherController = {
@@ -139,7 +139,8 @@ const weatherController = {
           selectors.findButton.forEach((button) => {
             const image = document.createElement('img');
             helper.setAttributes(image, {
-              src: 'https://media.giphy.com/media/Jku35TGjTmC0YAWsbb/giphy.gif',
+              src: require('../img/Dual Ring-1s-200px.svg'),
+              class: 'img-fluid',
               width: '25',
               height: '25',
             });
@@ -188,9 +189,4 @@ selectors.todayCard.addEventListener(
   'click',
   weatherController.domListeners.switchTemp
 );
-
-/* const celsius = document.getElementById('celsius');
-
-celsius.addEventListener('click', () => {
-  alert("wopse");
-}) */
+ */
