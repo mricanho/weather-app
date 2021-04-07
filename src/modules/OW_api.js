@@ -5,6 +5,8 @@ export default class Weather {
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,alerts&appid=${weatherAPIKey}`;
     const rowWeatherData = await fetch(url);
     const parsedWeatherData = await rowWeatherData.json();
+    /* console.log(rowWeatherData); */
+/*     console.log(parsedWeatherData) */
     return parsedWeatherData;
   }
 }

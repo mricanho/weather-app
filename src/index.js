@@ -20,6 +20,8 @@ const weatherController = {
             // store weatherData to use when toggling between temp units
             weatherController.storedWeatherData = weatherData;
 
+            console.log(weatherData);
+
             View.displayWeather(weatherData);
             View.updateCityName(`${queryString}, ${geoLocation.standard.prov}`);
           });
@@ -36,10 +38,12 @@ const weatherController = {
       })
       .then(() => {
         //reactivate find button
-        selectors.findButton.forEach((button) => {
-          button.innerHTML = 'Find';
+        selectors.findButton.classList.remove("is-loading");
+
+        /* selectors.findButton.forEach((button) => {
+          button.innerHTML = 'Search';
           button.disabled = false;
-        });
+        }); */
       })
       .catch((err) => {
         swal('', `${err}`, 'error');
@@ -61,6 +65,8 @@ const weatherController = {
             if (!geoLocationData.error) {
               // store weatherData to use when toggling between temp units
               weatherController.storedWeatherData = weatherData;
+
+              console.log("second log " + weatherData);
 
               View.displayWeather(weatherData);
               View.updateCityName(geoLocationData);
@@ -89,6 +95,8 @@ const weatherController = {
         Weather.getWeatherData(vancouverCoordinate).then((weatherData) => {
           // store weatherData to use when toggling between temp units
           weatherController.storedWeatherData = weatherData;
+
+          console.log("third log "+weatherData)
 
           View.displayWeather(weatherData);
           View.updateCityName('Vancouver');
@@ -127,7 +135,7 @@ const weatherController = {
         );
         const formInput = [...form.children][0];
         
-        const queryString = formInput.value.trim();
+        const queryString = formInput.value;
 
         // test for potential wrong city names
         // if test false add is-invalid flag to input
@@ -137,7 +145,9 @@ const weatherController = {
 
           //deactivate find button to prevent
           //flooding api with multiple requests
-          selectors.findButton.forEach((button) => {
+          selectors.findButton.classList.add("is-loading");
+
+          /* selectors.findButton.forEach((button) => {
             const image = document.createElement('img');
             helper.setAttributes(image, {
               src: 'https://media.giphy.com/media/Jku35TGjTmC0YAWsbb/giphy.gif',
@@ -147,7 +157,7 @@ const weatherController = {
             button.innerHTML = '';
             button.appendChild(image);
             button.disabled = true;
-          });
+          }); */
 
           //get request weather data
           weatherController.getLocationAndWeather(queryString);
@@ -186,7 +196,7 @@ selectors.locationForm.forEach((form) => {
 
 // Second attempt to make the submit works, without success:
 
-const newCity = document.getElementById("location");
+/* const newCity = document.getElementById("location");
 
 const submitCity = (e) => {
   e.preventDefault();
@@ -199,7 +209,7 @@ const submitCity = (e) => {
   newCity.value = null;
 }
 
-newCity.addEventListener("submit", submitCity);
+newCity.addEventListener("submit", submitCity); */
 
 // toggle displaying the data in Fahrenheit or Celsius.
 
