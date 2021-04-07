@@ -15,6 +15,7 @@ export default class View {
 /*     selectors.todayConditionIcon.src = require(`./img/icons/${
       weatherDate.current.weather[0].icon.substring(0, 2)
     }.svg`); */
+
     selectors.todayCondition.textContent = weatherDate.current.weather[0].description;
 
     selectors.todayHumidity.textContent = `${weatherDate.current.humidity} %`;
@@ -22,11 +23,6 @@ export default class View {
     selectors.todayWindDirection.textContent = helper.degToCompass(
       weatherDate.current.wind_deg,
     );
-
-    /* selectors.todayWindSpeed.textContent = helper.convertSpeed(
-      weatherDate.current.wind_speed,
-    ); */
-    // weatherDate.current.wind_speed + ' km/h';
 
     selectors.todayName.textContent = date.day;
     selectors.todayDate.textContent = date.date;
@@ -57,7 +53,7 @@ export default class View {
       selectors[`day_${index}_minTemp`].textContent = `${truncatedMinTemp}°${tempUnit}`;
     }
  */
-    /* if (selectors.mainWeatherSection.classList.contains('is-hidden')) {
+    if (selectors.mainWeatherSection.classList.contains('is-hidden')) {
       selectors.loadingPageAnimation.classList.add('is-hidden');
 
       selectors.mainWeatherSection.classList.remove('is-hidden');
@@ -67,7 +63,7 @@ export default class View {
           'scale-in-center',
         );
       }, 1000);
-    } */
+    }
   }
 
   static updateCityName(geoLocationData) {

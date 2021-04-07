@@ -179,9 +179,27 @@ const weatherController = {
 window.addEventListener('load', weatherController.domListeners.onLoadListener);
 
 // validity for nav bar form
-// and the mobile view form
-const inputZ = document.getElementById('locationInput');
-inputZ.addEventListener('submit', weatherController.domListeners.onFormSubmit);
+
+selectors.locationForm.forEach((form) => {
+  form.addEventListener('submit', weatherController.domListeners.onFormSubmit);
+});
+
+// Second attempt to make the submit works, without success:
+
+const newCity = document.getElementById("location");
+
+const submitCity = (e) => {
+  e.preventDefault();
+  const city = newCity.value
+  if (city === null || city === "") {
+    return;
+  } else {
+    weatherController.getLocationAndWeather(city);
+  }
+  newCity.value = null;
+}
+
+newCity.addEventListener("submit", submitCity);
 
 // toggle displaying the data in Fahrenheit or Celsius.
 
@@ -189,3 +207,4 @@ selectors.todayCard.addEventListener(
   'click',
   weatherController.domListeners.switchTemp
 );
+

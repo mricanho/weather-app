@@ -1,6 +1,6 @@
 export const locationForm = document.querySelectorAll('.needs-validation');
 export const findButton = document.getElementById('findBtn');
-export const locationInput = document.querySelector('#locationInpt');
+export const locationInput = document.getElementById('location');
 export const mainWeatherSection = document.querySelector('.mainSection');
 export const loadingPageAnimation = document.querySelector('#displayWhileLoadingPage');
 export const celsiusBtn = document.querySelector('#celsius');

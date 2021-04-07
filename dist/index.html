@@ -24,15 +24,15 @@
     </div>
   </nav>
   <div class="container is-max-desktop mt-5 px-6">
-    <div class="field has-addons needs-validation">
-      <p class="control is-expanded">
-        <input class="input is-normal is-primary" type="text" placeholder="Enter a city to search" id="locationInput">
-      </p>
-      <p class="control">
-        <a class="button is-primary" id="findBtn">
+    <div class="field has-addons needs-validation" novalidate>
+      <div class="control is-expanded">
+        <input class="input is-normal is-primary" type="text" placeholder="Enter a city to check the weather" id="location" required>
+      </div>
+      <div class="control">
+        <button class="button is-primary" id="findBtn" type="submit">
           Search
-        </a>
-      </p>
+        </button>
+      </div>
     </div>
   </div>
   <section class="container hero is-max-desktop is-hidden" id="displayWhileLoadingPage">
