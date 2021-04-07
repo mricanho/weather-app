@@ -12,11 +12,10 @@ export default class View {
       convertedCurrentTemp,
     );
 
-/*     selectors.todayConditionIcon.src = require(`../img/icons/${
+/*     selectors.todayConditionIcon.src = require(`./img/icons/${
       weatherDate.current.weather[0].icon.substring(0, 2)
     }.svg`); */
-
-    selectors.todayCondition.textContent = weatherDate.current.condition;
+    selectors.todayCondition.textContent = weatherDate.current.weather[0].description;
 
     selectors.todayHumidity.textContent = `${weatherDate.current.humidity} %`;
 
