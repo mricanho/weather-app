@@ -82,16 +82,16 @@ const weatherController = {
       };
 
       const positionAccessDenied = function () {
-        const newYorkCoordinates = {
-          latitude: 40.712772,
-          longitude: -74.006058,
+        const vancouverCoordinate = {
+          latitude: 49.2497,
+          longitude: -123.1193,
         };
-        Weather.getWeatherData(newYorkCoordinates).then((weatherData) => {
+        Weather.getWeatherData(vancouverCoordinate).then((weatherData) => {
           // store weatherData to use when toggling between temp units
           weatherController.storedWeatherData = weatherData;
 
           View.displayWeather(weatherData);
-          View.updateCityName('New York');
+          View.updateCityName('Vancouver');
         });
       };
 
@@ -106,8 +106,8 @@ const weatherController = {
       // select the current temp
       if (localStorage.getItem('temperatureUnit')) {
         if (localStorage.getItem('temperatureUnit') == 'F') {
-          selectors.fahrenheitBtn.classList.add('active');
-          selectors.celsiusBtn.classList.remove('active');
+          selectors.fahrenheitBtn.classList.add('is-hovered');
+          selectors.celsiusBtn.classList.remove('is-hovered');
         }
       }
     },
@@ -126,6 +126,7 @@ const weatherController = {
           `^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$`
         );
         const formInput = [...form.children][0];
+        
         const queryString = formInput.value.trim();
 
         // test for potential wrong city names
@@ -179,18 +180,12 @@ window.addEventListener('load', weatherController.domListeners.onLoadListener);
 
 // validity for nav bar form
 // and the mobile view form
-selectors.locationForm.forEach((form) => {
-  form.addEventListener('submit', weatherController.domListeners.onFormSubmit);
-});
+const inputZ = document.getElementById('locationInput');
+inputZ.addEventListener('submit', weatherController.domListeners.onFormSubmit);
 
 // toggle displaying the data in Fahrenheit or Celsius.
+
 selectors.todayCard.addEventListener(
   'click',
   weatherController.domListeners.switchTemp
 );
-
-/* const celsius = document.getElementById('celsius');
-
-celsius.addEventListener('click', () => {
-  alert("wopse");
-}) */

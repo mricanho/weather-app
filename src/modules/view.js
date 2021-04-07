@@ -16,7 +16,7 @@ export default class View {
       weatherDate.current.weather[0].icon.substring(0, 2)
     }.svg`); */
 
-    selectors.todayCondition.textContent = weatherDate.current.weather[0].description;
+    selectors.todayCondition.textContent = weatherDate.current.condition;
 
     selectors.todayHumidity.textContent = `${weatherDate.current.humidity} %`;
 
@@ -24,9 +24,9 @@ export default class View {
       weatherDate.current.wind_deg,
     );
 
-    selectors.todayWindSpeed.textContent = helper.convertSpeed(
+    /* selectors.todayWindSpeed.textContent = helper.convertSpeed(
       weatherDate.current.wind_speed,
-    );
+    ); */
     // weatherDate.current.wind_speed + ' km/h';
 
     selectors.todayName.textContent = date.day;
@@ -34,20 +34,20 @@ export default class View {
 
     // api daily arr contain 8 day,
     // only need 7 so setting the max index to 7
-    const tempUnit = localStorage.getItem('temperatureUnit')
+    /* const tempUnit = localStorage.getItem('temperatureUnit')
       ? localStorage.getItem('temperatureUnit')
-      : 'C';
-    for (let index = 1; index < 7; index += 1) {
+      : 'C'; */
+ /*    for (let index = 1; index < 7; index += 1) {
       const day = weatherDate.daily[index];
       const date = helper.timeConverter(day.dt);
 
-      selectors[`day_${index}_date`].textContent = date.day;
+      selectors[`day_${index}_date`].textContent = date.day; */
 
   /*     selectors[`day_${index}_icon`].src = require(`../img/icons/${
         day.weather[0].icon.substring(0, 2)
       }.svg`); */
 
-      const truncatedMaxTemp = Math.trunc(
+ /*      const truncatedMaxTemp = Math.trunc(
         helper.convertTemp(day.temp.max),
       );
       selectors[`day_${index}_maxTemp`].textContent = `${truncatedMaxTemp}°${tempUnit}`;
@@ -57,18 +57,18 @@ export default class View {
       );
       selectors[`day_${index}_minTemp`].textContent = `${truncatedMinTemp}°${tempUnit}`;
     }
+ */
+    /* if (selectors.mainWeatherSection.classList.contains('is-hidden')) {
+      selectors.loadingPageAnimation.classList.add('is-hidden');
 
-    if (selectors.mainWeatherSection.classList.contains('d-none')) {
-      selectors.loadingPageAnimation.classList.add('d-none');
-
-      selectors.mainWeatherSection.classList.remove('d-none');
+      selectors.mainWeatherSection.classList.remove('is-hidden');
       selectors.mainWeatherSection.classList.add('scale-in-center');
       setTimeout(() => {
         selectors.mainWeatherSection.classList.remove(
           'scale-in-center',
         );
       }, 1000);
-    }
+    } */
   }
 
   static updateCityName(geoLocationData) {

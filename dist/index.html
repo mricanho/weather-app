@@ -26,7 +26,7 @@
   <div class="container is-max-desktop mt-5 px-6">
     <div class="field has-addons needs-validation">
       <p class="control is-expanded">
-        <input class="input is-normal is-primary" type="text" placeholder="Enter a city to search" id="locationInpt">
+        <input class="input is-normal is-primary" type="text" placeholder="Enter a city to search" id="locationInput">
       </p>
       <p class="control">
         <a class="button is-primary" id="findBtn">
@@ -66,12 +66,13 @@
               <p class="title temp" id="temp">
                 19°
               </p>
-              <p class="subtitle is-size-3" id="city">
+              <p class="subtitle is-size-3 mb-0" id="city">
                 Xalapa, MX
               </p>
+              <p class="is-size-5 has-text-grey-light" id="condition">Sunny</p>
             </div>
             <div class="right column mt-1">
-              <div class="p-1 mt-1">
+              <div class="p-1">
                 <img src="assets/img/humidity.png" alt="Placeholder image" width="19" height="19" class="pt-1 mr-1">
                 <span class="has-text-primary-dark" id="humidity">38%</span>
               </div>
@@ -88,10 +89,10 @@
         </div>
         <footer class="card-footer is-mobile">
           <p class="card-footer-item">
-            <label class="button is-primary is-inverted is-small is-hovered" type="button" id="celsius">C</button>
+            <label class="button is-primary is-inverted is-small" type="button" id="celsius">Celsius</button>
           </p>
           <p class="card-footer-item">
-            <label class="button is-primary is-inverted is-small" type="button" id="fahrenheit">F</button>
+            <label class="button is-primary is-inverted is-small" type="button" id="fahrenheit">Fahrenheit</button>
           </p>
         </footer>
       </div>
