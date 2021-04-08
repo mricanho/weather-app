@@ -23,21 +23,21 @@ export default class View {
     selectors.todayName.textContent = date.day;
     selectors.todayDate.textContent = date.date;
 
-    const conditionText = document.getElementById("condition");
-    const conditionGif = document.getElementById("temp-icon")
+    const conditionText = document.getElementById('condition');
+    const conditionGif = document.getElementById('temp-icon');
 
-    if (conditionText.innerHTML.indexOf("clouds") != -1) {
-      conditionGif.src = ("https://media.giphy.com/media/fqVKfHAc7QOCnXRmHY/giphy.gif");
-    } else if (conditionText.innerHTML.indexOf("clear") != -1) {
-      conditionGif.src = ("https://media.giphy.com/media/MY6krcVK50sWsCakAp/giphy.gif");
-    } else if (conditionText.innerHTML.indexOf("drizzle") != -1) {
-      conditionGif.src = ("https://media.giphy.com/media/R761lRtHcXuRQgF1Pf/giphy.gif");
-    } else if (conditionText.innerHTML.indexOf("rain") != -1) {
-      conditionGif.src = ("https://media.giphy.com/media/kBfL5cuu4bj4rr6GN8/giphy.gif");
-    } else if (conditionText.innerHTML.indexOf("snow") != -1) {
-      conditionGif.src = ("https://media.giphy.com/media/tIHktzgRi8yjIplFVI/giphy.gif");
+    if (conditionText.innerHTML.indexOf('clouds') !== -1) {
+      conditionGif.src = ('https://media.giphy.com/media/fqVKfHAc7QOCnXRmHY/giphy.gif');
+    } else if (conditionText.innerHTML.indexOf('clear') !== -1) {
+      conditionGif.src = ('https://media.giphy.com/media/MY6krcVK50sWsCakAp/giphy.gif');
+    } else if (conditionText.innerHTML.indexOf('drizzle') !== -1) {
+      conditionGif.src = ('https://media.giphy.com/media/R761lRtHcXuRQgF1Pf/giphy.gif');
+    } else if (conditionText.innerHTML.indexOf('rain') !== -1) {
+      conditionGif.src = ('https://media.giphy.com/media/kBfL5cuu4bj4rr6GN8/giphy.gif');
+    } else if (conditionText.innerHTML.indexOf('snow') !== -1) {
+      conditionGif.src = ('https://media.giphy.com/media/tIHktzgRi8yjIplFVI/giphy.gif');
     } else {
-      conditionGif.src = ("https://media.giphy.com/media/h8OVffxQIVXWM2pwG4/giphy.gif");
+      conditionGif.src = ('https://media.giphy.com/media/h8OVffxQIVXWM2pwG4/giphy.gif');
     }
   }
 

@@ -1,12 +1,12 @@
-
+/* eslint-disable*/
 export function degToCompass(angle) {
   const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
   return directions[Math.round(angle / 45) % 8];
 }
 
 export function timeConverter(timeStamp) {
-  let dateVal = new Date(timeStamp * 1000);
-  let months = [
+  const dateVal = new Date(timeStamp * 1000);
+  const months = [
     'Jan',
     'Feb',
     'Mar',
@@ -21,9 +21,9 @@ export function timeConverter(timeStamp) {
     'Dec',
   ];
 
-  let month = months[dateVal.getMonth()];
-  let date = dateVal.getDate();
-  let day = [
+  const month = months[dateVal.getMonth()];
+  const date = dateVal.getDate();
+  const day = [
     'Sunday',
     'Monday',
     'Tuesday',
@@ -32,7 +32,7 @@ export function timeConverter(timeStamp) {
     'Friday',
     'Saturday',
   ][dateVal.getDay()];
-  let time = { day, date: `${date} ${month}` };
+  const time = { day, date: `${date} ${month}` };
   return time;
 }
 
@@ -63,7 +63,6 @@ export function convertSpeed(speed) {
   }
   return `${(speed * 3.6).toFixed(2)} km/h`;
 }
-
 
 export function convertTemp(temp) {
   const tempUnit = localStorage.getItem('temperatureUnit');

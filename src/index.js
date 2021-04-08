@@ -1,13 +1,13 @@
+/* eslint-disable*/
+import swal from 'sweetalert';
 import Weather from './modules/OW_api';
 import View from './modules/view';
 import * as selectors from './modules/selectors';
 import GeoLocation from './modules/geocode_api';
-import * as helper from './modules/helper';
-import swal from 'sweetalert';
 
 const weatherController = {
   storedWeatherData: null,
-  getLocationAndWeather: function (queryString) {
+  getLocationAndWeather(queryString) {
     GeoLocation.getLatLonFromCityName(queryString)
       .then((geoLocation) => {
         if (!geoLocation.error) {
@@ -26,22 +26,21 @@ const weatherController = {
           const errorMessage = geoLocation.error.hasOwnProperty('description')
             ? geoLocation.error.description
             : geoLocation.error.hasOwnProperty('message')
-            ? geoLocation.error.message
-            : 'Oopsie Woopsie!';
+              ? geoLocation.error.message
+              : 'Oopsie Woopsie!';
 
           swal('', `${errorMessage}`, 'error');
         }
       })
       .then(() => {
-        selectors.findButton.classList.remove("is-loading");
+        selectors.findButton.classList.remove('is-loading');
       })
       .catch((err) => {
         swal('', `${err}`, 'error');
       });
   },
   domListeners: {
-    onLoadListener: function () {
-
+    onLoadListener() {
       document.querySelector('body').style.display = 'block';
 
       const positionAccessGranted = function (location) {
@@ -51,21 +50,20 @@ const weatherController = {
         ])
           .then(([weatherData, geoLocationData]) => {
             if (!geoLocationData.error) {
-
               weatherController.storedWeatherData = weatherData;
 
-              console.log("second log " + weatherData);
+              console.log(`second log ${weatherData}`);
 
               View.displayWeather(weatherData);
               View.updateCityName(geoLocationData);
             } else {
               const errorMessage = geoLocationData.error.hasOwnProperty(
-                'description'
+                'description',
               )
                 ? geoLocationData.error.description
                 : geoLocationData.error.hasOwnProperty('message')
-                ? geoLocationData.error.message
-                : 'Oopsie Woopsie!';
+                  ? geoLocationData.error.message
+                  : 'Oopsie Woopsie!';
 
               swal('', `${errorMessage}`, 'error');
             }
@@ -81,10 +79,9 @@ const weatherController = {
           longitude: -123.1193,
         };
         Weather.getWeatherData(vancouverCoordinate).then((weatherData) => {
-
           weatherController.storedWeatherData = weatherData;
 
-          console.log("third log "+weatherData)
+          console.log(`third log ${weatherData}`);
 
           View.displayWeather(weatherData);
           View.updateCityName('Vancouver');
@@ -93,11 +90,11 @@ const weatherController = {
 
       navigator.geolocation.getCurrentPosition(
         positionAccessGranted,
-        positionAccessDenied
+        positionAccessDenied,
       );
     },
 
-    onFormSubmit: function (event) {
+    onFormSubmit(event) {
       event.preventDefault();
       const form = event.target;
 
@@ -108,16 +105,16 @@ const weatherController = {
         form.classList.remove('was-validated');
 
         const cityNameRegExp = RegExp(
-          `^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$`
+          '^([a-zA-Z\u0080-\u024F]+(?:. |-| |\'))*[a-zA-Z\u0080-\u024F]*$',
         );
         const formInput = document.getElementById('location');
-        
+
         const queryString = formInput.value;
 
         if (cityNameRegExp.test(queryString)) {
           formInput.classList.remove('is-invalid');
 
-          selectors.findButton.classList.add("is-loading");
+          selectors.findButton.classList.add('is-loading');
 
           weatherController.getLocationAndWeather(queryString);
         } else {
@@ -126,7 +123,7 @@ const weatherController = {
       }
     },
 
-    switchTemp: function (event) {
+    switchTemp(event) {
       if (event.target.closest('#celsius')) {
         localStorage.setItem('temperatureUnit', 'C');
 
@@ -152,6 +149,5 @@ selectors.locationForm.forEach((form) => {
 
 selectors.todayCard.addEventListener(
   'click',
-  weatherController.domListeners.switchTemp
+  weatherController.domListeners.switchTemp,
 );
-
