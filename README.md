@@ -1,4 +1,4 @@
-# Todo-List
+# Weather app - EasyWeather
 
 EasyWeather is a project in which I use OpenWeather API to display the temp and conditions of the weather of the desired city.
 
