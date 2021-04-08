@@ -2,11 +2,13 @@
 
 EasyWeather is a project in which I use OpenWeather API to display the temp and conditions of the weather of the desired city.
 
-![screenshot](dist/assets/images/screenshot.jpeg)
+This app is optimized for desktop, mobile isn't a good experience.
+
+![screenshot](dist/assets/img/screenshot.jpeg)
 
 ## Live demo
 
-[live demo](https://rawcdn.githack.com/mricanho/To-do-list/b7f35d15c48881d6e18a0d5fecd9d8355450a37b/dist/index.html)
+[live demo](https://rawcdn.githack.com/mricanho/weather-app/37a319bdc46aeddcc8164359331defec361fd294/dist/index.html)
 
 ## Built With
 
