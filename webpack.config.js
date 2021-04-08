@@ -34,8 +34,8 @@ module.exports = {
         loader: 'image-webpack-loader',
         enforce: 'pre',
         options: {
-          bypassOnDebug: true, 
-          disable: true, 
+          bypassOnDebug: true,
+          disable: true,
         },
       },
     ],
