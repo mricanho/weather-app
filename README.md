@@ -1,9 +1,8 @@
 # Todo-List
 
-This project is a Todo-List where you can create a new Project and inside this project, you can create a task, the task contains a title, description, due date, and priority.
-This project was created using the concepts of Single Responsibility, factory functions and, the Module Pattern.
+EasyWeather is a project in which I use OpenWeather API to display the temp and conditions of the weather of the desired city.
 
-![screenshot](dist/assets/images/Capture.JPG)
+![screenshot](dist/assets/images/screenshot.jpeg)
 
 ## Live demo
 
@@ -16,21 +15,28 @@ This project was created using the concepts of Single Responsibility, factory fu
 - CSS
 - Webpack
 - Package.json
+- OpenWeather API
+- Geocode API
 
-## How to start the project from your Local enviroment
+## How to start the project from your Local environment
 
 - Open your terminal and cd where you want to store the project
-- Run the following command - `git clone https://github.com/mricanho/To-do-list.git`
-- Cd into the directory - `cd To-do-list$`
-- Open the live server on your VScode `Alt + L` then `Alt + o` on `index.html`
+- To clone the repository run the following command:
+```bash
+git clone https://github.com/mricanho/Restaurant-page.git
+```
+- Change directory to point to the Restaurant-page dir.
+- Now run:
+```bash
+npm install
+```
+- Finally run:
+```bash
+npm start
+```
+- Go to the dist folder and select index.html, now Open the live server on your VScode `Alt + L` then `Alt + o`
 
 ## Author
-
-👤 **Brian Cruz**
-
-- Github: [@githubhandle](https://github.com/BrianSammit)
-- Twitter: [@twitterhandle](https://twitter.com/cruzsammit)
-- Linkedin: [linkedin](https://www.linkedin.com/in/brian-sammit-cruz-rodriguez-5877551a8/)
 
 👤 **Miguel Ricaño**
 
@@ -39,7 +45,7 @@ This project was created using the concepts of Single Responsibility, factory fu
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 ## Show your support
 
@@ -51,3 +57,5 @@ Give a star if you :star: like this project!
 - GitHub
 - TheOdinProject
 - JavaScript
+
+This project is [MIT](LICENSE) licensed.
