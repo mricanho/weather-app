@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css"
+      integrity="sha512-byErQdWdTqREz6DLAA9pCnLbdoGGhXfU6gm1c8bkf7F51JVmUBlayGe2A31VpXWQP+eiJ3ilTAZHCR3vmMyybA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/style/style.css" />
+  <title>EasyWeather</title>
+</head>
+<body>
+  <nav class="navbar is-primary navbar-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand ml-5">
+      <a class="navbar-item" href="#">
+        <img src="./assets/img/weather.png" alt="weather">
+        <h1 class="title ml-2 is-size-5 has-text-white">EasyWeather</h1>
+      </a>
+    </div>
+  </nav>
+  <div class="container is-max-desktop mt-5 px-6">
+    <form class="field has-addons needs-validation" novalidate>
+      <div class="control is-expanded">
+        <input class="input is-normal is-primary" type="text" placeholder="Enter a city to check the weather" id="location" required>
+      </div>
+      <div class="control">
+        <button class="button is-primary" id="findBtn" type="submit">
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+  <section class="container hero is-max-desktop is-hidden" id="displayWhileLoadingPage">
+    <div class="hero-body mx-6">
+      <div class="card mx-6">
+        <div class="card-image px-6 has-text-centered" >
+          <img src="https://media.giphy.com/media/Jku35TGjTmC0YAWsbb/giphy.gif" alt="Placeholder image">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container hero is-max-desktop mainSection px-6">
+    <div class="hero-body mx-6 pb-3 pt-5">
+      <div class="card mx-6" id="day-0">
+        <header class="is-justify-content-space-between">
+          <span class="p-1 ml-2 has-text-weight-semibold" id="day">
+            Monday
+          </span>
+          <span class="p-1 mr-2 has-text-primary" id="date">
+              4 Apr
+          </span>
+        </header>
+        <div class="card-image mx-4">
+          <figure class="image is-1by1">
+            <img src="https://media.giphy.com/media/jQcR96espgK0J79iam/giphy.gif" alt="Placeholder image" id="temp-icon">
+          </figure>
+        </div>
+        <div class="card-content has-text-centered pt-0 pb-2">
+          <div class="columns is-mobile is-gapless ">
+            <div class="left column">
+              <p class="title temp" id="temp">
+                19°
+              </p>
+              <p class="subtitle is-size-3 mb-0" id="city">
+                Xalapa, MX
+              </p>
+              <p class="is-size-5 has-text-grey-light" id="condition">Sunny</p>
+            </div>
+            <div class="right column mt-1">
+              <div class="p-1">
+                <img src="assets/img/humidity.png" alt="Placeholder image" width="19" height="19" class="pt-1 mr-1">
+                <span class="has-text-primary-dark" id="humidity">38%</span>
+              </div>
+              <div class="p-1 mt-1">
+                <img src="assets/img/wind.png" alt="Placeholder image" width="19" height="18" class="pt-1">
+                <span class="has-text-primary-dark" id="windspeed">5.54 km/h</span>
+              </div>
+              <div class="p-1 mt-1">
+                <img src="assets/img/compass.png" alt="Placeholder image" width="19" height="18" class="pt-1">
+                <span class="has-text-primary-dark" id="windDirection">N</span>
+              </div>
+            </div>           
+          </div>
+        </div>
+        <footer class="card-footer is-mobile">
+          <p class="card-footer-item">
+            <label class="button is-primary is-inverted is-small" type="button" id="celsius">Celsius</button>
+          </p>
+          <p class="card-footer-item">
+            <label class="button is-primary is-inverted is-small" type="button" id="fahrenheit">Fahrenheit</button>
+          </p>
+        </footer>
+      </div>
+    </div>
+  </section>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>EasyWeather</strong> by <a href="https://miguelricano.me">Miguel Ricaño</a>.
+    </p>
+  </div>
+</footer>
+  <script src="main.js"></script>
+</body>
+</html>
