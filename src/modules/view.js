@@ -12,10 +12,6 @@ export default class View {
       convertedCurrentTemp,
     );
 
-/*     selectors.todayConditionIcon.src = require(`./img/icons/${
-      weatherDate.current.weather[0].icon.substring(0, 2)
-    }.svg`); */
-
     selectors.todayCondition.textContent = weatherDate.current.weather[0].description;
 
     selectors.todayHumidity.textContent = `${weatherDate.current.humidity} %`;
@@ -27,47 +23,25 @@ export default class View {
     selectors.todayName.textContent = date.day;
     selectors.todayDate.textContent = date.date;
 
-    // api daily arr contain 8 day,
-    // only need 7 so setting the max index to 7
-    /* const tempUnit = localStorage.getItem('temperatureUnit')
-      ? localStorage.getItem('temperatureUnit')
-      : 'C'; */
- /*    for (let index = 1; index < 7; index += 1) {
-      const day = weatherDate.daily[index];
-      const date = helper.timeConverter(day.dt);
+    const conditionText = document.getElementById("condition");
+    const conditionGif = document.getElementById("temp-icon")
 
-      selectors[`day_${index}_date`].textContent = date.day; */
-
-  /*     selectors[`day_${index}_icon`].src = require(`../img/icons/${
-        day.weather[0].icon.substring(0, 2)
-      }.svg`); */
-
- /*      const truncatedMaxTemp = Math.trunc(
-        helper.convertTemp(day.temp.max),
-      );
-      selectors[`day_${index}_maxTemp`].textContent = `${truncatedMaxTemp}°${tempUnit}`;
-
-      const truncatedMinTemp = Math.trunc(
-        helper.convertTemp(day.temp.min),
-      );
-      selectors[`day_${index}_minTemp`].textContent = `${truncatedMinTemp}°${tempUnit}`;
-    }
- */
-    if (selectors.mainWeatherSection.classList.contains('is-hidden')) {
-      selectors.loadingPageAnimation.classList.add('is-hidden');
-
-      selectors.mainWeatherSection.classList.remove('is-hidden');
-      selectors.mainWeatherSection.classList.add('scale-in-center');
-      setTimeout(() => {
-        selectors.mainWeatherSection.classList.remove(
-          'scale-in-center',
-        );
-      }, 1000);
+    if (conditionText.innerHTML.indexOf("clouds") != -1) {
+      conditionGif.src = ("https://media.giphy.com/media/fqVKfHAc7QOCnXRmHY/giphy.gif");
+    } else if (conditionText.innerHTML.indexOf("clear") != -1) {
+      conditionGif.src = ("https://media.giphy.com/media/MY6krcVK50sWsCakAp/giphy.gif");
+    } else if (conditionText.innerHTML.indexOf("drizzle") != -1) {
+      conditionGif.src = ("https://media.giphy.com/media/R761lRtHcXuRQgF1Pf/giphy.gif");
+    } else if (conditionText.innerHTML.indexOf("rain") != -1) {
+      conditionGif.src = ("https://media.giphy.com/media/kBfL5cuu4bj4rr6GN8/giphy.gif");
+    } else if (conditionText.innerHTML.indexOf("snow") != -1) {
+      conditionGif.src = ("https://media.giphy.com/media/tIHktzgRi8yjIplFVI/giphy.gif");
+    } else {
+      conditionGif.src = ("https://media.giphy.com/media/h8OVffxQIVXWM2pwG4/giphy.gif");
     }
   }
 
   static updateCityName(geoLocationData) {
-    // if city name was passed as string or as object from api service
     if (typeof geoLocationData === 'string') {
       selectors.todayCityName.textContent = geoLocationData;
     } else {

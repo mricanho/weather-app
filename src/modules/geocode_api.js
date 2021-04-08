@@ -1,5 +1,4 @@
 export default class GeoLocation {
-  // get city from geolocation coordinates
   static getCityNameFromLatLon({ latitude, longitude }) {
     const url = `https://geocode.xyz/${latitude},${longitude}?json=1`;
     return fetch(url)
@@ -11,7 +10,6 @@ export default class GeoLocation {
       });
   }
 
-  // get geoLocation coordinates from city name
   static getLatLonFromCityName(cityName) {
     const url = `https://geocode.xyz/${cityName}?json=1`;
     return fetch(url)
