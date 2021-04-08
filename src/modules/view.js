@@ -20,6 +20,10 @@ export default class View {
       weatherDate.current.wind_deg,
     );
 
+    selectors.todayWindSpeed.textContent = helper.convertSpeed(
+      weatherDate.current.wind_speed,
+    );
+
     selectors.todayName.textContent = date.day;
     selectors.todayDate.textContent = date.date;
 

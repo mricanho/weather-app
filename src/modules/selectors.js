@@ -13,6 +13,6 @@ export const todayConditionIcon = document.getElementById('temp-icon');
 export const todayHumidity = document.querySelector('#humidity');
 export const todayWindDirection = document.querySelector('#day-0 #windDirection');
 export const todayCityName = document.getElementById('city');
-export const todayWindSpeed = document.querySelector('#day-0 #windSpeed');
+export const todayWindSpeed = document.getElementById('windspeed');
 export const todayName = document.querySelector('#day-0 #day');
 export const todayDate = document.querySelector('#day-0 #date');
