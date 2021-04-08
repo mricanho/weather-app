@@ -43,7 +43,7 @@ const weatherController = {
     onLoadListener() {
       document.querySelector('body').style.display = 'block';
 
-      const positionAccessGranted = function (location) {
+      const positionAccessGranted = (location) => {
         Promise.all([
           Weather.getWeatherData(location.coords),
           GeoLocation.getCityNameFromLatLon(location.coords),
@@ -73,7 +73,7 @@ const weatherController = {
           });
       };
 
-      const positionAccessDenied = function () {
+      const positionAccessDenied = () => {
         const vancouverCoordinate = {
           latitude: 49.2497,
           longitude: -123.1193,
