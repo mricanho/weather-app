@@ -1,10 +1,10 @@
 /* eslint-disable*/
-export function degToCompass(angle) {
+export const degToCompass = (angle) => {
   const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
   return directions[Math.round(angle / 45) % 8];
 }
 
-export function timeConverter(timeStamp) {
+export const timeConverter = (timeStamp) => {
   const dateVal = new Date(timeStamp * 1000);
   const months = [
     'Jan',
@@ -36,13 +36,13 @@ export function timeConverter(timeStamp) {
   return time;
 }
 
-export function setAttributes(el, attrs) {
+export const setAttributes = (el, attrs) => {
   for (const key in attrs) {
     el.setAttribute(key, attrs[key]);
   }
 }
 
-export function truncateTemp(temp) {
+export const truncateTemp = (temp) => {
   const tempUnit = localStorage.getItem('temperatureUnit')
     ? localStorage.getItem('temperatureUnit')
     : 'C';
@@ -53,7 +53,7 @@ export function truncateTemp(temp) {
     : `${tempNoDecimal}°`;
 }
 
-export function convertSpeed(speed) {
+export const convertSpeed = (speed) => {
   const tempUnit = localStorage.getItem('temperatureUnit');
   if (tempUnit) {
     if (tempUnit === 'C') {
@@ -64,7 +64,7 @@ export function convertSpeed(speed) {
   return `${(speed * 3.6).toFixed(2)} km/h`;
 }
 
-export function convertTemp(temp) {
+export const convertTemp = (temp) => {
   const tempUnit = localStorage.getItem('temperatureUnit');
 
   if (tempUnit) {
